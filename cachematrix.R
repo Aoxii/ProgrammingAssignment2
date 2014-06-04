@@ -1,6 +1,13 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
+#  Example :
+# zz <- matrix(rnorm(16), nrow = 4)           # Create a matrix zz
+# zzs  <- makeCacheMatrix(zz )                # Create the special mat
+# zzs$get()                                   # the matrix
+# cacheSolve(zzs)                             # inverse
+# cacheSolve(zzs)                             # Call the 2nd time
+
 
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -13,11 +20,8 @@ makeCacheMatrix <- function(x = matrix()) {
     }
 
     get <- function() x
-
     setinv <- function(inverse) inv <<- inverse
-
     getinv <- function() inv
-
 
     list(set = set, get = get, setinv = setinv, getinv = getinv)
 }
